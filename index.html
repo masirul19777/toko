@@ -7,6 +7,7 @@
 <meta name="description" content="Nusa Store: toko online lengkap dengan produk berkualitas, harga terjangkau, dan pengiriman ke seluruh Indonesia." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://picsum.photos" />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
   :root {
@@ -26,7 +27,6 @@
   }
 
   * { box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -39,7 +39,6 @@
   }
 
   img { max-width: 100%; display: block; }
-
   a { color: inherit; text-decoration: none; }
 
   .container {
@@ -87,7 +86,7 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(255, 255, 255, .86);
+    background: rgba(255, 255, 255, .88);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
   }
@@ -119,7 +118,7 @@
     box-shadow: 0 6px 16px rgba(79, 70, 229, .35);
     flex-shrink: 0;
   }
-  .logo span small {
+  .logo small {
     display: block;
     font-size: .68rem;
     font-weight: 600;
@@ -129,11 +128,7 @@
     line-height: 1;
   }
 
-  .nav {
-    display: none;
-    align-items: center;
-    gap: 6px;
-  }
+  .nav { display: none; align-items: center; gap: 6px; }
   .nav a {
     padding: 8px 14px;
     border-radius: 999px;
@@ -161,7 +156,7 @@
   .hero-inner {
     display: grid;
     gap: 36px;
-    padding: 52px 0 60px;
+    padding: 48px 0 56px;
     align-items: center;
   }
   .badge {
@@ -175,7 +170,6 @@
     border-radius: 999px;
     font-size: .78rem;
     font-weight: 700;
-    letter-spacing: .02em;
   }
   .badge::before {
     content: "";
@@ -211,8 +205,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    margin-top: 34px;
-    padding-top: 24px;
+    margin-top: 32px;
+    padding-top: 22px;
     border-top: 1px dashed var(--border);
     max-width: 460px;
   }
@@ -231,18 +225,14 @@
     background: #fff;
     border: 1px solid var(--border);
     box-shadow: var(--shadow-lg);
-    padding: 18px;
+    padding: 16px;
   }
-  .hero-img {
-    border-radius: 18px;
+  .hero-card img {
+    width: 100%;
     aspect-ratio: 4 / 3;
-    background:
-      radial-gradient(circle at 30% 25%, rgba(255,255,255,.85), transparent 55%),
-      linear-gradient(135deg, #4f46e5, #8b5cf6 48%, #f97316);
-    display: grid;
-    place-items: center;
-    color: #fff;
-    font-size: 3.6rem;
+    object-fit: cover;
+    border-radius: 18px;
+    background: #eef2ff;
   }
   .hero-card-row {
     display: flex;
@@ -266,7 +256,7 @@
   .float-pill {
     position: absolute;
     bottom: -16px;
-    left: -8px;
+    left: -6px;
     background: #fff;
     border: 1px solid var(--border);
     border-radius: 14px;
@@ -285,10 +275,10 @@
     display: grid; place-items: center; font-size: .85rem;
   }
 
-  /* ---------- SECTION HEADING ---------- */
+  /* ---------- SECTION ---------- */
   section { scroll-margin-top: 84px; }
-  .section { padding: 64px 0; }
-  .section-head { margin-bottom: 34px; max-width: 620px; }
+  .section { padding: 60px 0; }
+  .section-head { margin-bottom: 30px; max-width: 620px; }
   .eyebrow {
     font-size: .78rem;
     font-weight: 800;
@@ -307,12 +297,11 @@
   }
   .section-head p { margin: 0; color: var(--muted); font-size: .97rem; }
 
-  /* ---------- PRODUCT GRID ---------- */
-  .products { background: var(--bg); }
+  /* ---------- PRODUK ---------- */
   .grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    gap: 14px;
   }
   .product {
     background: var(--card);
@@ -329,20 +318,18 @@
     box-shadow: var(--shadow-lg);
     border-color: #c7d2fe;
   }
-  .product-thumb {
-    aspect-ratio: 4 / 3;
-    display: grid;
-    place-items: center;
-    font-size: 2.6rem;
+  .thumb {
     position: relative;
-    color: #fff;
+    background: #eef2ff;
+    overflow: hidden;
   }
-  .thumb-1 { background: linear-gradient(135deg, #6366f1, #a855f7); }
-  .thumb-2 { background: linear-gradient(135deg, #0ea5e9, #22d3ee); }
-  .thumb-3 { background: linear-gradient(135deg, #f97316, #fbbf24); }
-  .thumb-4 { background: linear-gradient(135deg, #10b981, #34d399); }
-  .thumb-5 { background: linear-gradient(135deg, #ef4444, #f472b6); }
-  .thumb-6 { background: linear-gradient(135deg, #334155, #64748b); }
+  .thumb img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform .35s ease;
+  }
+  .product:hover .thumb img { transform: scale(1.06); }
 
   .tag {
     position: absolute;
@@ -350,22 +337,26 @@
     left: 10px;
     background: rgba(255, 255, 255, .95);
     color: var(--dark);
-    font-size: .66rem;
+    font-size: .64rem;
     font-weight: 800;
     letter-spacing: .06em;
     text-transform: uppercase;
     padding: 4px 9px;
     border-radius: 999px;
+    z-index: 2;
   }
+  .tag.hot { background: #fee2e2; color: #b91c1c; }
+  .tag.new { background: #dcfce7; color: #15803d; }
+
   .product-body {
-    padding: 14px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
     flex: 1;
   }
   .product-cat {
-    font-size: .68rem;
+    font-size: .64rem;
     font-weight: 800;
     letter-spacing: .1em;
     text-transform: uppercase;
@@ -373,49 +364,44 @@
   }
   .product h3 {
     margin: 0;
-    font-size: .97rem;
+    font-size: .94rem;
     line-height: 1.35;
     color: var(--dark);
     font-weight: 700;
   }
   .product .desc {
     margin: 0;
-    font-size: .8rem;
+    font-size: .78rem;
     color: var(--muted);
     display: none;
   }
-  .rating {
-    font-size: .76rem;
-    color: var(--muted);
-    font-weight: 600;
-  }
+  .rating { font-size: .74rem; color: var(--muted); font-weight: 600; }
   .rating strong { color: #b45309; }
+
   .product-foot {
     margin-top: auto;
-    padding-top: 10px;
+    padding-top: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: 6px;
+    flex-wrap: wrap;
   }
   .price { display: flex; flex-direction: column; line-height: 1.2; }
-  .price .now { font-weight: 800; color: var(--dark); font-size: 1rem; }
-  .price .was {
-    font-size: .74rem;
-    color: #94a3b8;
-    text-decoration: line-through;
-  }
+  .price .now { font-weight: 800; color: var(--dark); font-size: .98rem; }
+  .price .was { font-size: .72rem; color: #94a3b8; text-decoration: line-through; }
   .btn-buy {
     background: #eef2ff;
     color: var(--primary-dark);
     border: 1px solid #dfe3ff;
     border-radius: 10px;
-    padding: 9px 14px;
-    font-size: .8rem;
+    padding: 8px 13px;
+    font-size: .78rem;
     font-weight: 800;
     cursor: pointer;
-    transition: background .15s, color .15s;
+    transition: background .15s, color .15s, border-color .15s;
     white-space: nowrap;
+    font-family: inherit;
   }
   .btn-buy:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
 
@@ -425,42 +411,42 @@
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
   }
-  .about-inner {
-    display: grid;
-    gap: 34px;
-    align-items: center;
-  }
-  .about-visual {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
+  .about-inner { display: grid; gap: 32px; align-items: center; }
+  .about-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .about-box {
     border-radius: var(--radius);
-    padding: 20px 16px;
+    padding: 18px 14px;
     border: 1px solid var(--border);
     background: var(--bg);
   }
-  .about-box.tall { grid-row: span 2; background: linear-gradient(160deg, #4f46e5, #7c3aed); color: #fff; border: none; }
-  .about-box .emoji { font-size: 1.6rem; display: block; margin-bottom: 10px; }
-  .about-box h4 { margin: 0 0 4px; font-size: .95rem; color: var(--dark); font-weight: 800; }
-  .about-box.tall h4 { color: #fff; font-size: 1.05rem; }
-  .about-box p { margin: 0; font-size: .8rem; color: var(--muted); }
-  .about-box.tall p { color: rgba(255, 255, 255, .82); }
+  .about-box.tall {
+    grid-row: span 2;
+    background: linear-gradient(160deg, #4f46e5, #7c3aed);
+    color: #fff;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .about-box .emoji { font-size: 1.5rem; display: block; margin-bottom: 8px; }
+  .about-box h4 { margin: 0 0 4px; font-size: .92rem; color: var(--dark); font-weight: 800; }
+  .about-box.tall h4 { color: #fff; font-size: 1.02rem; }
+  .about-box p { margin: 0; font-size: .78rem; color: var(--muted); }
+  .about-box.tall p { color: rgba(255, 255, 255, .84); }
 
   .about-text h2 {
-    margin: 10px 0 14px;
+    margin: 8px 0 12px;
     font-size: clamp(1.45rem, 4.4vw, 2.1rem);
     line-height: 1.22;
     letter-spacing: -.03em;
     color: var(--dark);
     font-weight: 800;
   }
-  .about-text p { margin: 0 0 14px; color: var(--muted); font-size: .95rem; }
+  .about-text p { margin: 0 0 14px; color: var(--muted); font-size: .94rem; }
 
   .checklist {
     list-style: none;
-    margin: 0 0 24px;
+    margin: 0 0 22px;
     padding: 0;
     display: grid;
     gap: 10px;
@@ -469,15 +455,14 @@
     display: flex;
     gap: 10px;
     align-items: flex-start;
-    font-size: .9rem;
+    font-size: .88rem;
     color: var(--text);
     font-weight: 600;
   }
   .checklist li::before {
     content: "✓";
     flex-shrink: 0;
-    width: 22px;
-    height: 22px;
+    width: 22px; height: 22px;
     border-radius: 50%;
     background: #dcfce7;
     color: #15803d;
@@ -488,14 +473,12 @@
     margin-top: 1px;
   }
 
-  /* ---------- CTA WA ---------- */
-  .cta-band {
-    padding: 0 0 68px;
-  }
+  /* ---------- CTA BAND ---------- */
+  .cta-band { padding: 0 0 60px; }
   .cta-card {
     background: linear-gradient(135deg, #0f172a, #1e1b4b 60%, #312e81);
-    border-radius: 24px;
-    padding: 38px 24px;
+    border-radius: 22px;
+    padding: 34px 22px;
     color: #fff;
     text-align: center;
     position: relative;
@@ -511,16 +494,16 @@
   }
   .cta-card h2 {
     margin: 0 0 10px;
-    font-size: clamp(1.35rem, 5vw, 2rem);
+    font-size: clamp(1.3rem, 5vw, 2rem);
     letter-spacing: -.03em;
     font-weight: 800;
     position: relative;
   }
   .cta-card p {
-    margin: 0 auto 24px;
+    margin: 0 auto 22px;
     max-width: 48ch;
     color: rgba(255, 255, 255, .78);
-    font-size: .93rem;
+    font-size: .92rem;
     position: relative;
   }
   .cta-card .btn { position: relative; }
@@ -529,24 +512,20 @@
   .site-footer {
     background: var(--dark);
     color: rgba(255, 255, 255, .72);
-    padding: 52px 0 0;
+    padding: 48px 0 0;
     font-size: .88rem;
   }
-  .footer-grid {
-    display: grid;
-    gap: 32px;
-    padding-bottom: 38px;
-  }
-  .footer-brand .logo { color: #fff; margin-bottom: 14px; }
-  .footer-brand .logo span small { color: rgba(255, 255, 255, .5); }
-  .footer-brand p { margin: 0 0 18px; max-width: 34ch; color: rgba(255, 255, 255, .6); }
+  .footer-grid { display: grid; gap: 30px; padding-bottom: 34px; }
+  .footer-brand .logo { color: #fff; margin-bottom: 12px; }
+  .footer-brand .logo small { color: rgba(255, 255, 255, .5); }
+  .footer-brand p { margin: 0 0 16px; max-width: 34ch; color: rgba(255, 255, 255, .6); }
 
   .footer-col h4 {
     color: #fff;
-    font-size: .8rem;
+    font-size: .78rem;
     letter-spacing: .12em;
     text-transform: uppercase;
-    margin: 0 0 14px;
+    margin: 0 0 12px;
     font-weight: 800;
   }
   .footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
@@ -567,17 +546,17 @@
   }
   .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, .1);
-    padding: 18px 0 24px;
+    padding: 16px 0 22px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
     align-items: center;
     text-align: center;
-    font-size: .8rem;
+    font-size: .78rem;
     color: rgba(255, 255, 255, .5);
   }
 
-  /* Floating WA */
+  /* Floating WhatsApp */
   .wa-float {
     position: fixed;
     right: 16px;
@@ -590,19 +569,24 @@
     color: #fff;
     display: grid;
     place-items: center;
-    font-size: 1.5rem;
     box-shadow: 0 10px 24px rgba(34, 197, 94, .45);
     transition: transform .2s;
   }
   .wa-float:hover { transform: scale(1.08); }
+  .wa-float svg { width: 28px; height: 28px; fill: currentColor; }
 
   /* ---------- RESPONSIVE ---------- */
   @media (min-width: 600px) {
-    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .grid { gap: 20px; }
     .product .desc { display: block; }
+    .product-body { padding: 16px; }
+    .product h3 { font-size: 1rem; }
+    .price .now { font-size: 1.05rem; }
+    .btn-buy { padding: 10px 16px; font-size: .82rem; }
     .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
-    .about-visual { max-width: 460px; }
-    .cta-card { padding: 52px 40px; }
+    .cta-card { padding: 46px 36px; }
+    .about-visual { max-width: 440px; }
+    .hero-inner { padding: 60px 0 68px; }
   }
 
   @media (min-width: 860px) {
@@ -614,10 +598,16 @@
     .section { padding: 82px 0; }
     .about-inner { grid-template-columns: .85fr 1.15fr; gap: 56px; }
     .about-text p { font-size: 1rem; }
-    .footer-grid { grid-template-columns: 1.4fr .8fr .8fr 1.2fr; gap: 40px; }
-    .wa-float { right: 26px; bottom: 26px; width: 60px; height: 60px; font-size: 1.7rem; }
-    .cta-card { padding: 60px 56px; text-align: left; }
+    .footer-grid { grid-template-columns: 1.5fr .8fr .8fr 1.2fr; gap: 40px; }
+    .wa-float { right: 26px; bottom: 26px; width: 60px; height: 60px; }
+    .wa-float svg { width: 32px; height: 32px; }
+    .cta-card { padding: 56px 52px; text-align: left; }
     .cta-card p { margin-inline: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
   }
 </style>
 </head>
@@ -628,9 +618,7 @@
   <div class="container header-inner">
     <a href="#beranda" class="logo" aria-label="Nusa Store - Beranda">
       <span class="logo-mark" aria-hidden="true">🛍️</span>
-      <span>Nusa Store
-        <small>Toko Online</small>
-      </span>
+      <span>Nusa Store<small>Toko Online</small></span>
     </a>
 
     <nav class="nav" aria-label="Navigasi utama">
@@ -648,15 +636,15 @@
 </header>
 
 <main>
-  <!-- ================= HERO ================= -->
+  <!-- ================= HERO BANNER ================= -->
   <section class="hero" id="beranda">
     <div class="container hero-inner">
       <div>
-        <span class="badge">Gratis ongkir min. Rp150.000</span>
+        <span class="badge">Promo Spesial — Diskon s/d 35%</span>
         <h1>Belanja online <em>lebih mudah</em>, cepat sampai ke rumah.</h1>
-        <p>Produk pilihan berkualitas dengan harga jujur, garansi resmi, dan pengiriman ke seluruh Indonesia. Pesan langsung lewat WhatsApp, tanpa ribet.</p>
+        <p>Produk pilihan berkualitas dengan harga jujur, garansi resmi, dan pengiriman gratis ke seluruh Indonesia. Pesan langsung lewat WhatsApp, tanpa ribet.</p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="#produk">Lihat Produk →</a>
+          <a class="btn btn-primary" href="#produk">Belanja Sekarang →</a>
           <a class="btn btn-ghost" href="#tentang">Tentang Kami</a>
         </div>
 
@@ -669,7 +657,10 @@
 
       <div class="hero-visual">
         <div class="hero-card">
-          <div class="hero-img" aria-hidden="true">🎁</div>
+          <img
+            src="https://picsum.photos/seed/nusastore-hero-promo/900/675"
+            alt="Promo paket best seller Nusa Store"
+            width="900" height="675" loading="eager" />
           <div class="hero-card-row">
             <div>
               <h3>Paket Best Seller</h3>
@@ -683,8 +674,8 @@
     </div>
   </section>
 
-  <!-- ================= PRODUK ================= -->
-  <section class="section products" id="produk">
+  <!-- ================= GRID 6 PRODUK ================= -->
+  <section class="section" id="produk">
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Katalog Produk</p>
@@ -695,90 +686,107 @@
       <div class="grid">
         <!-- 1 -->
         <article class="product">
-          <div class="product-thumb thumb-1"><span class="tag">Best Seller</span>🎧</div>
+          <div class="thumb">
+            <span class="tag hot">Best Seller</span>
+            <img src="https://picsum.photos/seed/nusa-headphone/600/600" alt="Wireless Headphone Pro" width="600" height="600" loading="lazy" />
+          </div>
           <div class="product-body">
             <span class="product-cat">Audio</span>
             <h3>Wireless Headphone Pro</h3>
             <p class="desc">Noise cancelling aktif, baterai 40 jam, nyaman dipakai seharian.</p>
-            <div class="rating">⭐ <strong>4.9</strong> · 1.2rb terjual</div>
+            <div class="rating">⭐ <strong>4.9</strong> · 1,2rb terjual</div>
             <div class="product-foot">
               <div class="price"><span class="now">Rp349.000</span><span class="was">Rp499.000</span></div>
-              <button class="btn-buy" type="button">Beli</button>
+              <a class="btn-buy" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20pesan%20Wireless%20Headphone%20Pro%20(Rp349.000)" target="_blank" rel="noopener">Beli</a>
             </div>
           </div>
         </article>
 
         <!-- 2 -->
         <article class="product">
-          <div class="product-thumb thumb-2">⌚</div>
+          <div class="thumb">
+            <span class="tag new">Baru</span>
+            <img src="https://picsum.photos/seed/nusa-watch/600/600" alt="Smartwatch Fit Active" width="600" height="600" loading="lazy" />
+          </div>
           <div class="product-body">
             <span class="product-cat">Wearable</span>
-            <h3>Smartwatch Fit S2</h3>
-            <p class="desc">Monitor detak jantung, GPS, tahan air IP68, layar AMOLED.</p>
+            <h3>Smartwatch Fit Active</h3>
+            <p class="desc">Layar AMOLED, pemantau detak jantung, tahan air IP68.</p>
             <div class="rating">⭐ <strong>4.8</strong> · 860 terjual</div>
             <div class="product-foot">
-              <div class="price"><span class="now">Rp425.000</span><span class="was">Rp599.000</span></div>
-              <button class="btn-buy" type="button">Beli</button>
+              <div class="price"><span class="now">Rp529.000</span><span class="was">Rp699.000</span></div>
+              <a class="btn-buy" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20pesan%20Smartwatch%20Fit%20Active%20(Rp529.000)" target="_blank" rel="noopener">Beli</a>
             </div>
           </div>
         </article>
 
         <!-- 3 -->
         <article class="product">
-          <div class="product-thumb thumb-3"><span class="tag">Diskon 30%</span>🎒</div>
+          <div class="thumb">
+            <span class="tag">Hemat</span>
+            <img src="https://picsum.photos/seed/nusa-speaker/600/600" alt="Speaker Bluetooth Mini" width="600" height="600" loading="lazy" />
+          </div>
           <div class="product-body">
-            <span class="product-cat">Fashion</span>
-            <h3>Tas Ransel Urban 22L</h3>
-            <p class="desc">Bahan anti air, kompartemen laptop 15 inci, desain minimalis.</p>
-            <div class="rating">⭐ <strong>4.7</strong> · 640 terjual</div>
+            <span class="product-cat">Audio</span>
+            <h3>Speaker Bluetooth Mini</h3>
+            <p class="desc">Suara bass mantap, tahan air, cocok untuk traveling.</p>
+            <div class="rating">⭐ <strong>4.7</strong> · 645 terjual</div>
             <div class="product-foot">
-              <div class="price"><span class="now">Rp219.000</span><span class="was">Rp315.000</span></div>
-              <button class="btn-buy" type="button">Beli</button>
+              <div class="price"><span class="now">Rp249.000</span><span class="was">Rp329.000</span></div>
+              <a class="btn-buy" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20pesan%20Speaker%20Bluetooth%20Mini%20(Rp249.000)" target="_blank" rel="noopener">Beli</a>
             </div>
           </div>
         </article>
 
         <!-- 4 -->
         <article class="product">
-          <div class="product-thumb thumb-4">☕</div>
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/nusa-backpack/600/600" alt="Tas Ransel Urban Daypack" width="600" height="600" loading="lazy" />
+          </div>
           <div class="product-body">
-            <span class="product-cat">Rumah Tangga</span>
-            <h3>Kopi Manual Brew Set</h3>
-            <p class="desc">Dripper keramik, server 600ml, dan 40 filter kertas premium.</p>
-            <div class="rating">⭐ <strong>4.9</strong> · 510 terjual</div>
+            <span class="product-cat">Fashion</span>
+            <h3>Tas Ransel Urban Daypack</h3>
+            <p class="desc">Bahan anti air, kompartemen laptop 15 inci, desain minimalis.</p>
+            <div class="rating">⭐ <strong>4.9</strong> · 1,1rb terjual</div>
             <div class="product-foot">
-              <div class="price"><span class="now">Rp159.000</span><span class="was">Rp210.000</span></div>
-              <button class="btn-buy" type="button">Beli</button>
+              <div class="price"><span class="now">Rp289.000</span><span class="was">Rp399.000</span></div>
+              <a class="btn-buy" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20pesan%20Tas%20Ransel%20Urban%20Daypack%20(Rp289.000)" target="_blank" rel="noopener">Beli</a>
             </div>
           </div>
         </article>
 
         <!-- 5 -->
         <article class="product">
-          <div class="product-thumb thumb-5"><span class="tag">Baru</span>💡</div>
+          <div class="thumb">
+            <span class="tag hot">Terlaris</span>
+            <img src="https://picsum.photos/seed/nusa-shoes/600/600" alt="Sepatu Sneakers Daily Comfort" width="600" height="600" loading="lazy" />
+          </div>
           <div class="product-body">
-            <span class="product-cat">Elektronik</span>
-            <h3>Lampu Meja LED Cerdas</h3>
-            <p class="desc">3 suhu warna, kontrol sentuh, port USB-C, hemat energi.</p>
-            <div class="rating">⭐ <strong>4.6</strong> · 320 terjual</div>
+            <span class="product-cat">Fashion</span>
+            <h3>Sepatu Sneakers Daily Comfort</h3>
+            <p class="desc">Sole empuk, ringan, cocok untuk aktivitas harian.</p>
+            <div class="rating">⭐ <strong>4.8</strong> · 2,3rb terjual</div>
             <div class="product-foot">
-              <div class="price"><span class="now">Rp129.000</span><span class="was">Rp179.000</span></div>
-              <button class="btn-buy" type="button">Beli</button>
+              <div class="price"><span class="now">Rp379.000</span><span class="was">Rp549.000</span></div>
+              <a class="btn-buy" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20pesan%20Sepatu%20Sneakers%20Daily%20Comfort%20(Rp379.000)" target="_blank" rel="noopener">Beli</a>
             </div>
           </div>
         </article>
 
         <!-- 6 -->
         <article class="product">
-          <div class="product-thumb thumb-6">👟</div>
+          <div class="thumb">
+            <span class="tag new">Baru</span>
+            <img src="https://picsum.photos/seed/nusa-bottle/600/600" alt="Botol Minum Termos 750ml" width="600" height="600" loading="lazy" />
+          </div>
           <div class="product-body">
-            <span class="product-cat">Olahraga</span>
-            <h3>Sepatu Running Cloudlite</h3>
-            <p class="desc">Sole ringan bertekanan balik, upper mesh breathable.</p>
-            <div class="rating">⭐ <strong>4.8</strong> · 980 terjual</div>
+            <span class="product-cat">Rumah Tangga</span>
+            <h3>Botol Minum Termos 750ml</h3>
+            <p class="desc">Tahan panas &amp; dingin 12 jam, stainless food grade.</p>
+            <div class="rating">⭐ <strong>4.9</strong> · 980 terjual</div>
             <div class="product-foot">
-              <div class="price"><span class="now">Rp389.000</span><span class="was">Rp529.000</span></div>
-              <button class="btn-buy" type="button">Beli</button>
+              <div class="price"><span class="now">Rp129.000</span><span class="was">Rp179.000</span></div>
+              <a class="btn-buy" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20pesan%20Botol%20Minum%20Termos%20750ml%20(Rp129.000)" target="_blank" rel="noopener">Beli</a>
             </div>
           </div>
         </article>
@@ -789,34 +797,35 @@
   <!-- ================= TENTANG KAMI ================= -->
   <section class="section about" id="tentang">
     <div class="container about-inner">
-      <div class="about-visual" aria-hidden="true">
+      <div class="about-visual">
         <div class="about-box tall">
-          <span class="emoji">🏆</span>
-          <h4>Sejak 2016</h4>
-          <p>Melayani lebih dari 12.000 pelanggan di 34 provinsi Indonesia.</p>
+          <span class="emoji" aria-hidden="true">🏆</span>
+          <h4>Sejak 2018</h4>
+          <p>Melayani ribuan pelanggan di 34 provinsi dengan rating rata-rata 4.9/5.</p>
         </div>
         <div class="about-box">
-          <span class="emoji">✅</span>
-          <h4>100% Original</h4>
-          <p>Semua produk bergaransi resmi.</p>
-        </div>
-        <div class="about-box">
-          <span class="emoji">⚡</span>
+          <span class="emoji" aria-hidden="true">🚚</span>
           <h4>Kirim Cepat</h4>
-          <p>Dikemas &amp; dikirim hari yang sama.</p>
+          <p>Dikirim hari yang sama untuk order sebelum jam 15.00.</p>
+        </div>
+        <div class="about-box">
+          <span class="emoji" aria-hidden="true">🛡️</span>
+          <h4>Garansi Resmi</h4>
+          <p>Produk 100% original, bergaransi resmi distributor.</p>
         </div>
       </div>
 
       <div class="about-text">
         <p class="eyebrow">Tentang Kami</p>
-        <h2>Toko online yang mengutamakan kepercayaan.</h2>
-        <p>Nusa Store adalah toko online independen yang fokus pada produk fungsional sehari-hari: audio, elektronik, fashion, dan perlengkapan rumah. Kami memilih setiap produk secara langsung dari distributor resmi, sehingga Anda mendapat kualitas terbaik tanpa harga berlebih.</p>
-        <p>Setiap pesanan dikemas dengan hati-hati dan diperiksa sebelum dikirim. Ada kendala? Tim kami siap membantu lewat WhatsApp setiap hari, pukul 08.00–21.00 WIB.</p>
+        <h2>Toko online yang mengutamakan kepercayaan pelanggan.</h2>
+        <p>Nusa Store adalah toko online lokal yang menyediakan produk elektronik, fashion, dan kebutuhan rumah tangga. Kami percaya belanja online harus sederhana, jujur, dan aman.</p>
+        <p>Setiap produk dikurasi oleh tim kami sebelum dijual. Tidak ada harga palsu, tidak ada barang abal-abal — hanya produk yang kami percaya layak Anda pakai sehari-hari.</p>
 
         <ul class="checklist">
-          <li>Garansi uang kembali 7 hari jika produk tidak sesuai</li>
-          <li>Gratis konsultasi sebelum membeli via WhatsApp</li>
-          <li>Pengiriman kerja sama dengan JNE, J&amp;T, dan SiCepat</li>
+          <li>Produk 100% original dengan garansi resmi</li>
+          <li>Gratis ongkir untuk pembelian min. Rp150.000</li>
+          <li>Bisa bayar di tempat (COD) &amp; transfer bank</li>
+          <li>Layanan konsumen aktif 24 jam via WhatsApp</li>
         </ul>
 
         <a class="btn btn-primary" href="https://wa.me/6281234567890?text=Halo%20Nusa%20Store%2C%20saya%20ingin%20konsultasi%20produk." target="_blank" rel="noopener">Konsultasi Gratis</a>
@@ -828,9 +837,9 @@
   <section class="cta-band">
     <div class="container">
       <div class="cta-card">
-        <h2>Siap pesan? Chat kami sekarang.</h2>
-        <p>Tim kami membalas dalam hitungan menit pada jam operasional. Sebutkan produk yang Anda inginkan, kami bantu sampai transaksi selesai.</p>
-        <a class="btn btn-wa" href="https://wa.me/6281234567890?text=Halo%20Nusa%20Store%2C%20saya%20ingin%20memesan%20produk." target="_blank" rel="noopener">💬 Pesan via WhatsApp</a>
+        <h2>Butuh rekomendasi produk?</h2>
+        <p>Tim kami siap membantu memilih produk yang paling sesuai kebutuhan dan budget Anda. Balas cepat, tanpa biaya.</p>
+        <a class="btn btn-wa" href="https://wa.me/6281234567890?text=Halo%20Nusa%20Store%2C%20tolong%20rekomendasikan%20produk%20untuk%20saya." target="_blank" rel="noopener">Chat via WhatsApp</a>
       </div>
     </div>
   </section>
@@ -841,11 +850,12 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#beranda" class="logo">
+        <a href="#beranda" class="logo" aria-label="Nusa Store">
           <span class="logo-mark" aria-hidden="true">🛍️</span>
           <span>Nusa Store<small>Toko Online</small></span>
         </a>
-        <p>Toko online terpercaya untuk produk fungsional sehari-hari. Original, bergaransi, dikirim cepat ke seluruh Indonesia.</p>
+        <p>Toko online terpercaya untuk kebutuhan harian Anda. Produk original, harga jujur, pengiriman ke seluruh Indonesia.</p>
+        <a class="btn btn-wa" href="https://wa.me/6281234567890?text=Halo%20Nusa%20Store%2C%20saya%20ingin%20bertanya." target="_blank" rel="noopener">Chat WhatsApp</a>
       </div>
 
       <div class="footer-col">
@@ -861,50 +871,47 @@
       <div class="footer-col">
         <h4>Bantuan</h4>
         <ul>
-          <li><a href="#kontak">Cara Pemesanan</a></li>
-          <li><a href="#kontak">Pengiriman</a></li>
-          <li><a href="#kontak">Kebijakan Retur</a></li>
-          <li><a href="#kontak">FAQ</a></li>
+          <li><a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20bertanya%20soal%20pengiriman." target="_blank" rel="noopener">Info Pengiriman</a></li>
+          <li><a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20mengajukan%20retur%20barang." target="_blank" rel="noopener">Retur &amp; Garansi</a></li>
+          <li><a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20menanyakan%20cara%20pembayaran." target="_blank" rel="noopener">Cara Pembayaran</a></li>
+          <li><a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20menanyakan%20promo%20terbaru." target="_blank" rel="noopener">Promo Terbaru</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Kontak WhatsApp</h4>
+        <h4>Kontak</h4>
         <ul class="contact-list">
-          <li><span class="ic" aria-hidden="true">💬</span><a href="https://wa.me/6281234567890" target="_blank" rel="noopener">+62 812-3456-7890</a></li>
-          <li><span class="ic" aria-hidden="true">✉️</span><a href="mailto:halo@nusastore.id">halo@nusastore.id</a></li>
-          <li><span class="ic" aria-hidden="true">📍</span>Jl. Merdeka No. 21, Bandung, Jawa Barat</li>
-          <li><span class="ic" aria-hidden="true">🕒</span>Senin–Minggu, 08.00–21.00 WIB</li>
+          <li>
+            <span class="ic" aria-hidden="true">💬</span>
+            <span><a href="https://wa.me/6281234567890" target="_blank" rel="noopener">WhatsApp: 0812-3456-7890</a></span>
+          </li>
+          <li>
+            <span class="ic" aria-hidden="true">✉️</span>
+            <span><a href="mailto:halo@nusastore.id">halo@nusastore.id</a></span>
+          </li>
+          <li>
+            <span class="ic" aria-hidden="true">📍</span>
+            <span>Jl. Merdeka No. 88, Bandung, Jawa Barat</span>
+          </li>
+          <li>
+            <span class="ic" aria-hidden="true">🕒</span>
+            <span>Senin–Sabtu, 08.00–20.00 WIB</span>
+          </li>
         </ul>
-        <p style="margin-top:16px">
-          <a class="btn btn-wa" href="https://wa.me/6281234567890?text=Halo%20Nusa%20Store%2C%20saya%20ingin%20bertanya." target="_blank" rel="noopener">Chat WhatsApp</a>
-        </p>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <span>© <span id="year">2025</span> Nusa Store. Seluruh hak cipta dilindungi.</span>
-      <span>Dibuat dengan ❤️ di Indonesia</span>
+      <span>© 2025 Nusa Store. Semua hak dilindungi.</span>
+      <span>Dibuat dengan ❤️ untuk pelanggan Indonesia.</span>
     </div>
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/6281234567890?text=Halo%20Nusa%20Store%2C%20saya%20ingin%20bertanya%20tentang%20produk." target="_blank" rel="noopener" aria-label="Chat WhatsApp">💬</a>
+<!-- Floating WhatsApp -->
+<a class="wa-float" href="https://wa.me/6281234567890?text=Halo%20Nusa%20Store%2C%20saya%20ingin%20bertanya%20tentang%20produk." target="_blank" rel="noopener" aria-label="Hubungi kami via WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.42 1.26 4.86L2 22l5.32-1.3a9.9 9.9 0 0 0 4.72 1.2c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2Zm0 18.13c-1.55 0-3-.44-4.23-1.2l-.3-.18-3.13.77.8-3.05-.2-.32a8.13 8.13 0 0 1-1.25-4.34c0-4.5 3.66-8.16 8.16-8.16 4.5 0 8.16 3.66 8.16 8.16s-3.66 8.32-8.01 8.32Zm4.48-6.1c-.24-.12-1.45-.72-1.68-.8-.22-.09-.39-.13-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.45-1.35-1.69-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.75-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.19 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+</a>
 
-<script>
-  // Tahun otomatis
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Tombol beli -> WhatsApp dengan nama produk
-  document.querySelectorAll('.product').forEach(function (card) {
-    card.querySelector('.btn-buy').addEventListener('click', function () {
-      var name = card.querySelector('h3').textContent.trim();
-      var price = card.querySelector('.price .now').textContent.trim();
-      var url = 'https://wa.me/6281234567890?text=' +
-        encodeURIComponent('Halo Nusa Store, saya ingin membeli: ' + name + ' (' + price + '). Apakah stok tersedia?');
-      window.open(url, '_blank', 'noopener');
-    });
-  });
-</script>
 </body>
 </html>
