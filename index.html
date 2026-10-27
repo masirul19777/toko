@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Nusa Store — Toko Online Terpercaya</title>
 <meta name="description" content="Nusa Store: toko online lengkap dengan produk berkualitas, harga terjangkau, dan pengiriman ke seluruh Indonesia." />
+<link rel="icon" href="./apple-touch-icon.png" type="image/png" />
+<link rel="apple-touch-icon" href="./apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://picsum.photos" />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
   :root {
@@ -230,7 +231,7 @@
   .hero-card img {
     width: 100%;
     aspect-ratio: 4 / 3;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 18px;
     background: #eef2ff;
   }
@@ -658,9 +659,9 @@
       <div class="hero-visual">
         <div class="hero-card">
           <img
-            src="https://picsum.photos/seed/nusastore-hero-promo/900/675"
-            alt="Promo paket best seller Nusa Store"
-            width="900" height="675" loading="eager" />
+            src="./apple-touch-icon.png"
+            alt="Logo Nusa Store"
+            width="900" height="675" loading="eager" fetchpriority="high" />
           <div class="hero-card-row">
             <div>
               <h3>Paket Best Seller</h3>
@@ -697,7 +698,7 @@
             <div class="rating">⭐ <strong>4.9</strong> · 1,2rb terjual</div>
             <div class="product-foot">
               <div class="price"><span class="now">Rp349.000</span><span class="was">Rp499.000</span></div>
-              <a class="btn-buy" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20pesan%20Wireless%20Headphone%20Pro%20(Rp349.000)" target="_blank" rel="noopener">Beli</a>
+              <button class="btn-buy" type="button">Beli</button>
             </div>
           </div>
         </article>
@@ -706,16 +707,16 @@
         <article class="product">
           <div class="thumb">
             <span class="tag new">Baru</span>
-            <img src="https://picsum.photos/seed/nusa-watch/600/600" alt="Smartwatch Fit Active" width="600" height="600" loading="lazy" />
+            <img src="https://picsum.photos/seed/nusa-smartwatch/600/600" alt="Smartwatch Fit S2" width="600" height="600" loading="lazy" />
           </div>
           <div class="product-body">
             <span class="product-cat">Wearable</span>
-            <h3>Smartwatch Fit Active</h3>
-            <p class="desc">Layar AMOLED, pemantau detak jantung, tahan air IP68.</p>
-            <div class="rating">⭐ <strong>4.8</strong> · 860 terjual</div>
+            <h3>Smartwatch Fit S2</h3>
+            <p class="desc">Pantau detak jantung, tidur, dan olahraga harian dengan layar AMOLED.</p>
+            <div class="rating">⭐ <strong>4.8</strong> · 980 terjual</div>
             <div class="product-foot">
-              <div class="price"><span class="now">Rp529.000</span><span class="was">Rp699.000</span></div>
-              <a class="btn-buy" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20pesan%20Smartwatch%20Fit%20Active%20(Rp529.000)" target="_blank" rel="noopener">Beli</a>
+              <div class="price"><span class="now">Rp429.000</span><span class="was">Rp599.000</span></div>
+              <button class="btn-buy" type="button">Beli</button>
             </div>
           </div>
         </article>
@@ -723,17 +724,17 @@
         <!-- 3 -->
         <article class="product">
           <div class="thumb">
-            <span class="tag">Hemat</span>
-            <img src="https://picsum.photos/seed/nusa-speaker/600/600" alt="Speaker Bluetooth Mini" width="600" height="600" loading="lazy" />
+            <span class="tag">Promo</span>
+            <img src="https://picsum.photos/seed/nusa-tumbler/600/600" alt="Tumbler Stainless 1L" width="600" height="600" loading="lazy" />
           </div>
           <div class="product-body">
-            <span class="product-cat">Audio</span>
-            <h3>Speaker Bluetooth Mini</h3>
-            <p class="desc">Suara bass mantap, tahan air, cocok untuk traveling.</p>
-            <div class="rating">⭐ <strong>4.7</strong> · 645 terjual</div>
+            <span class="product-cat">Rumah Tangga</span>
+            <h3>Tumbler Stainless 1L</h3>
+            <p class="desc">Tahan panas &amp; dingin hingga 12 jam, anti bocor, mudah dibersihkan.</p>
+            <div class="rating">⭐ <strong>4.7</strong> · 2,1rb terjual</div>
             <div class="product-foot">
-              <div class="price"><span class="now">Rp249.000</span><span class="was">Rp329.000</span></div>
-              <a class="btn-buy" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20pesan%20Speaker%20Bluetooth%20Mini%20(Rp249.000)" target="_blank" rel="noopener">Beli</a>
+              <div class="price"><span class="now">Rp119.000</span><span class="was">Rp159.000</span></div>
+              <button class="btn-buy" type="button">Beli</button>
             </div>
           </div>
         </article>
@@ -741,16 +742,17 @@
         <!-- 4 -->
         <article class="product">
           <div class="thumb">
-            <img src="https://picsum.photos/seed/nusa-backpack/600/600" alt="Tas Ransel Urban Daypack" width="600" height="600" loading="lazy" />
+            <span class="tag hot">Best Seller</span>
+            <img src="https://picsum.photos/seed/nusa-tas/600/600" alt="Tas Ransel Urban 20L" width="600" height="600" loading="lazy" />
           </div>
           <div class="product-body">
             <span class="product-cat">Fashion</span>
-            <h3>Tas Ransel Urban Daypack</h3>
-            <p class="desc">Bahan anti air, kompartemen laptop 15 inci, desain minimalis.</p>
-            <div class="rating">⭐ <strong>4.9</strong> · 1,1rb terjual</div>
+            <h3>Tas Ransel Urban 20L</h3>
+            <p class="desc">Water repellent, kompartemen laptop 14 inci, desain minimalis.</p>
+            <div class="rating">⭐ <strong>4.8</strong> · 1,5rb terjual</div>
             <div class="product-foot">
-              <div class="price"><span class="now">Rp289.000</span><span class="was">Rp399.000</span></div>
-              <a class="btn-buy" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20pesan%20Tas%20Ransel%20Urban%20Daypack%20(Rp289.000)" target="_blank" rel="noopener">Beli</a>
+              <div class="price"><span class="now">Rp229.000</span><span class="was">Rp329.000</span></div>
+              <button class="btn-buy" type="button">Beli</button>
             </div>
           </div>
         </article>
@@ -758,17 +760,17 @@
         <!-- 5 -->
         <article class="product">
           <div class="thumb">
-            <span class="tag hot">Terlaris</span>
-            <img src="https://picsum.photos/seed/nusa-shoes/600/600" alt="Sepatu Sneakers Daily Comfort" width="600" height="600" loading="lazy" />
+            <span class="tag new">Baru</span>
+            <img src="https://picsum.photos/seed/nusa-lampu/600/600" alt="Lampu Meja LED Minimalis" width="600" height="600" loading="lazy" />
           </div>
           <div class="product-body">
-            <span class="product-cat">Fashion</span>
-            <h3>Sepatu Sneakers Daily Comfort</h3>
-            <p class="desc">Sole empuk, ringan, cocok untuk aktivitas harian.</p>
-            <div class="rating">⭐ <strong>4.8</strong> · 2,3rb terjual</div>
+            <span class="product-cat">Elektronik</span>
+            <h3>Lampu Meja LED Minimalis</h3>
+            <p class="desc">Tiga tingkat cahaya, hemat energi, cocok untuk meja kerja.</p>
+            <div class="rating">⭐ <strong>4.6</strong> · 640 terjual</div>
             <div class="product-foot">
-              <div class="price"><span class="now">Rp379.000</span><span class="was">Rp549.000</span></div>
-              <a class="btn-buy" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20pesan%20Sepatu%20Sneakers%20Daily%20Comfort%20(Rp379.000)" target="_blank" rel="noopener">Beli</a>
+              <div class="price"><span class="now">Rp149.000</span><span class="was">Rp199.000</span></div>
+              <button class="btn-buy" type="button">Beli</button>
             </div>
           </div>
         </article>
@@ -776,17 +778,17 @@
         <!-- 6 -->
         <article class="product">
           <div class="thumb">
-            <span class="tag new">Baru</span>
-            <img src="https://picsum.photos/seed/nusa-bottle/600/600" alt="Botol Minum Termos 750ml" width="600" height="600" loading="lazy" />
+            <span class="tag">Promo</span>
+            <img src="https://picsum.photos/seed/nusa-sepatu/600/600" alt="Sepatu Sneakers Daily" width="600" height="600" loading="lazy" />
           </div>
           <div class="product-body">
-            <span class="product-cat">Rumah Tangga</span>
-            <h3>Botol Minum Termos 750ml</h3>
-            <p class="desc">Tahan panas &amp; dingin 12 jam, stainless food grade.</p>
-            <div class="rating">⭐ <strong>4.9</strong> · 980 terjual</div>
+            <span class="product-cat">Fashion</span>
+            <h3>Sepatu Sneakers Daily</h3>
+            <p class="desc">Ringan, sol empuk, cocok untuk aktivitas harian dan jalan jauh.</p>
+            <div class="rating">⭐ <strong>4.7</strong> · 1,8rb terjual</div>
             <div class="product-foot">
-              <div class="price"><span class="now">Rp129.000</span><span class="was">Rp179.000</span></div>
-              <a class="btn-buy" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20pesan%20Botol%20Minum%20Termos%20750ml%20(Rp129.000)" target="_blank" rel="noopener">Beli</a>
+              <div class="price"><span class="now">Rp279.000</span><span class="was">Rp399.000</span></div>
+              <button class="btn-buy" type="button">Beli</button>
             </div>
           </div>
         </article>
@@ -799,63 +801,59 @@
     <div class="container about-inner">
       <div class="about-visual">
         <div class="about-box tall">
-          <span class="emoji" aria-hidden="true">🏆</span>
-          <h4>Sejak 2018</h4>
-          <p>Melayani ribuan pelanggan di 34 provinsi dengan rating rata-rata 4.9/5.</p>
+          <span class="emoji" aria-hidden="true">🇮🇩</span>
+          <h4>100% Lokal</h4>
+          <p>Dikirim dari gudang di Indonesia, mendukung produk UMKM pilihan.</p>
         </div>
         <div class="about-box">
-          <span class="emoji" aria-hidden="true">🚚</span>
+          <span class="emoji" aria-hidden="true">⚡</span>
           <h4>Kirim Cepat</h4>
-          <p>Dikirim hari yang sama untuk order sebelum jam 15.00.</p>
+          <p>Pesanan sebelum jam 15.00 dikirim di hari yang sama.</p>
         </div>
         <div class="about-box">
           <span class="emoji" aria-hidden="true">🛡️</span>
           <h4>Garansi Resmi</h4>
-          <p>Produk 100% original, bergaransi resmi distributor.</p>
+          <p>Setiap produk bergaransi dan bisa diretur 7 hari.</p>
         </div>
       </div>
 
       <div class="about-text">
         <p class="eyebrow">Tentang Kami</p>
-        <h2>Toko online yang mengutamakan kepercayaan pelanggan.</h2>
-        <p>Nusa Store adalah toko online lokal yang menyediakan produk elektronik, fashion, dan kebutuhan rumah tangga. Kami percaya belanja online harus sederhana, jujur, dan aman.</p>
-        <p>Setiap produk dikurasi oleh tim kami sebelum dijual. Tidak ada harga palsu, tidak ada barang abal-abal — hanya produk yang kami percaya layak Anda pakai sehari-hari.</p>
-
+        <h2>Toko online yang mengutamakan kepercayaan</h2>
+        <p>Nusa Store berdiri sejak 2019 dengan satu tujuan sederhana: membuat belanja online terasa aman dan mudah untuk semua orang. Kami memilih produk satu per satu, menguji kualitasnya, dan memastikan harganya tetap masuk akal.</p>
         <ul class="checklist">
-          <li>Produk 100% original dengan garansi resmi</li>
-          <li>Gratis ongkir untuk pembelian min. Rp150.000</li>
-          <li>Bisa bayar di tempat (COD) &amp; transfer bank</li>
-          <li>Layanan konsumen aktif 24 jam via WhatsApp</li>
+          <li>Produk kurasi langsung oleh tim kami</li>
+          <li>Pembayaran aman &amp; bisa transfer bank</li>
+          <li>Respon chat cepat, rata-rata di bawah 10 menit</li>
+          <li>Pengiriman ke seluruh Indonesia</li>
         </ul>
-
         <a class="btn btn-primary" href="https://wa.me/6281234567890?text=Halo%20Nusa%20Store%2C%20saya%20ingin%20konsultasi%20produk." target="_blank" rel="noopener">Konsultasi Gratis</a>
       </div>
     </div>
   </section>
 
-  <!-- ================= CTA ================= -->
-  <section class="cta-band">
+  <!-- ================= CTA BAND ================= -->
+  <section class="cta-band" id="kontak">
     <div class="container">
       <div class="cta-card">
-        <h2>Butuh rekomendasi produk?</h2>
-        <p>Tim kami siap membantu memilih produk yang paling sesuai kebutuhan dan budget Anda. Balas cepat, tanpa biaya.</p>
-        <a class="btn btn-wa" href="https://wa.me/6281234567890?text=Halo%20Nusa%20Store%2C%20tolong%20rekomendasikan%20produk%20untuk%20saya." target="_blank" rel="noopener">Chat via WhatsApp</a>
+        <h2>Siap belanja hari ini?</h2>
+        <p>Hubungi kami lewat WhatsApp untuk stok terbaru, rekomendasi produk, dan promo khusus pelanggan baru.</p>
+        <a class="btn btn-wa" href="https://wa.me/6281234567890?text=Halo%20Nusa%20Store%2C%20saya%20ingin%20memesan%20produk." target="_blank" rel="noopener">Chat WhatsApp Sekarang</a>
       </div>
     </div>
   </section>
 </main>
 
 <!-- ================= FOOTER ================= -->
-<footer class="site-footer" id="kontak">
+<footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#beranda" class="logo" aria-label="Nusa Store">
+        <a href="#beranda" class="logo">
           <span class="logo-mark" aria-hidden="true">🛍️</span>
           <span>Nusa Store<small>Toko Online</small></span>
         </a>
-        <p>Toko online terpercaya untuk kebutuhan harian Anda. Produk original, harga jujur, pengiriman ke seluruh Indonesia.</p>
-        <a class="btn btn-wa" href="https://wa.me/6281234567890?text=Halo%20Nusa%20Store%2C%20saya%20ingin%20bertanya." target="_blank" rel="noopener">Chat WhatsApp</a>
+        <p>Produk pilihan, harga jujur, pengiriman ke seluruh Indonesia. Belanja aman bersama Nusa Store.</p>
       </div>
 
       <div class="footer-col">
@@ -871,47 +869,38 @@
       <div class="footer-col">
         <h4>Bantuan</h4>
         <ul>
-          <li><a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20bertanya%20soal%20pengiriman." target="_blank" rel="noopener">Info Pengiriman</a></li>
-          <li><a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20mengajukan%20retur%20barang." target="_blank" rel="noopener">Retur &amp; Garansi</a></li>
-          <li><a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20menanyakan%20cara%20pembayaran." target="_blank" rel="noopener">Cara Pembayaran</a></li>
-          <li><a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20menanyakan%20promo%20terbaru." target="_blank" rel="noopener">Promo Terbaru</a></li>
+          <li><a href="#kontak">Cara Pemesanan</a></li>
+          <li><a href="#kontak">Pengiriman</a></li>
+          <li><a href="#kontak">Retur &amp; Garansi</a></li>
+          <li><a href="#kontak">FAQ</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
         <h4>Kontak</h4>
         <ul class="contact-list">
-          <li>
-            <span class="ic" aria-hidden="true">💬</span>
-            <span><a href="https://wa.me/6281234567890" target="_blank" rel="noopener">WhatsApp: 0812-3456-7890</a></span>
-          </li>
-          <li>
-            <span class="ic" aria-hidden="true">✉️</span>
-            <span><a href="mailto:halo@nusastore.id">halo@nusastore.id</a></span>
-          </li>
-          <li>
-            <span class="ic" aria-hidden="true">📍</span>
-            <span>Jl. Merdeka No. 88, Bandung, Jawa Barat</span>
-          </li>
-          <li>
-            <span class="ic" aria-hidden="true">🕒</span>
-            <span>Senin–Sabtu, 08.00–20.00 WIB</span>
-          </li>
+          <li><span class="ic" aria-hidden="true">💬</span><span>WhatsApp: 0812-3456-7890</span></li>
+          <li><span class="ic" aria-hidden="true">✉️</span><span>halo@nusastore.id</span></li>
+          <li><span class="ic" aria-hidden="true">📍</span><span>Jl. Merdeka No. 21, Jakarta</span></li>
+          <li><span class="ic" aria-hidden="true">🕒</span><span>Senin–Sabtu, 08.00–20.00</span></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <span>© 2025 Nusa Store. Semua hak dilindungi.</span>
-      <span>Dibuat dengan ❤️ untuk pelanggan Indonesia.</span>
+      <span>© <span id="year">2025</span> Nusa Store. Semua hak dilindungi.</span>
+      <span>Dibuat dengan ❤️ di Indonesia</span>
     </div>
   </div>
 </footer>
 
 <!-- Floating WhatsApp -->
-<a class="wa-float" href="https://wa.me/6281234567890?text=Halo%20Nusa%20Store%2C%20saya%20ingin%20bertanya%20tentang%20produk." target="_blank" rel="noopener" aria-label="Hubungi kami via WhatsApp">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.42 1.26 4.86L2 22l5.32-1.3a9.9 9.9 0 0 0 4.72 1.2c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2Zm0 18.13c-1.55 0-3-.44-4.23-1.2l-.3-.18-3.13.77.8-3.05-.2-.32a8.13 8.13 0 0 1-1.25-4.34c0-4.5 3.66-8.16 8.16-8.16 4.5 0 8.16 3.66 8.16 8.16s-3.66 8.32-8.01 8.32Zm4.48-6.1c-.24-.12-1.45-.72-1.68-.8-.22-.09-.39-.13-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.45-1.35-1.69-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.75-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.19 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+<a class="wa-float" href="https://wa.me/6281234567890?text=Halo%20Nusa%20Store%2C%20saya%20ingin%20bertanya." target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13c-1.53 0-3.03-.41-4.34-1.19l-.31-.18-3.12.82.83-3.04-.2-.32a8.19 8.19 0 0 1-1.26-4.31c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23 0 4.54-3.69 8.22-8.23 8.22zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.79.96-.14.16-.29.19-.54.06-.25-.12-1.05-.39-2-1.24-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
 </a>
 
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
